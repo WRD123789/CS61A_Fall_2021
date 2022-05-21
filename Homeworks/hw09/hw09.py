@@ -60,7 +60,7 @@ def match_time(text):
     >>> match_time("At 2:00 I pinged 127.0.0.1:80.")
     ['2:00']
     """
-    return re.findall(r'\b(?:(?:[0-1]?[0-9])|(?:2[0-4])):[0-5][0-9](?:AM|BM)?\b', text)
+    return re.findall(r'\b(?:(?:[0-1]?[0-9])|(?:2[0-3])):[0-5][0-9](?:AM|BM)?\b', text)
 
 
 import re
