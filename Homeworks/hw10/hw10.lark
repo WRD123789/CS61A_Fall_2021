@@ -1,0 +1,18 @@
+rstring: "r\"" regex* "\""
+
+?regex: character | word | group | pipe | class | plus_quant | star_quant | num_quant
+group: "(" regex ")"
+pipe: regex "|" regex
+character: LETTER | NUMBER
+range: (NUMBER "-" NUMBER | LETTER "-" LETTER)*
+class: "[" (character* | range)* "]"
+word: WORD
+?quant: group | character | class
+plus_quant: quant "+"
+star_quant: quant "*"
+num_quant: quant "{" ((NUMBER ",") | (NUMBER "," NUMBER) | ("," NUMBER)) "}"
+
+%ignore /\s+/
+%import common.LETTER
+%import common.NUMBER
+%import common.WORD
