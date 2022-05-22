@@ -14,19 +14,6 @@ def calculator_ops(calc_str):
     """
     return re.findall(r'([-+*/] \d+ \d+)', calc_str)
 
-
-#Q3: Linked List BNF
-
-?start: link
-link: "Link(" link_first ", "? link_rest? ")"
-
-?link_first: NUMBER | link
-
-?link_rest: NUMBER | link
-
-%ignore /\s+/
-%import common.NUMBER
-
 #Q4: Tree BNF
 
 ?start: tree_node
