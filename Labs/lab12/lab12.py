@@ -13,14 +13,3 @@ def calculator_ops(calc_str):
     []
     """
     return re.findall(r'([-+*/] \d+ \d+)', calc_str)
-
-#Q4: Tree BNF
-
-?start: tree_node
-
-tree_node: "Tree(" label ", "? branches? ")"
-?label: NUMBER
-branches: "[" tree_node (", " tree_node)* "]"
-
-%ignore /\s+/
-%import common.NUMBER
