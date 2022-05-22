@@ -1,12 +1,12 @@
-    
-    link: "null"
-    
-    ?link_first: "null"
-    
-    ?link_rest: "null"
-    
-    %ignore /\s+/
-    %import common.NUMBER
+?start: link
+link: "Link(" link_first ", "? link_rest? ")"
+
+?link_first: NUMBER | link
+
+?link_rest: NUMBER | link
+
+%ignore /\s+/
+%import common.NUMBER
 
 
     
